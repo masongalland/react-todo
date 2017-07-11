@@ -23,8 +23,10 @@
 }
 
 input {
+    width: 100%;
     border: none;
     border-bottom: 1px solid black;
+    margin-top: 7px;
 }
 input:focus {
     outline: none;

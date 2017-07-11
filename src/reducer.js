@@ -1,5 +1,11 @@
 const initialState = {
-    todos: [],
+    todos: [
+        {
+            task: "Take the dog for a walk",
+            description: "Take Georgie out again. He hasn't been walked in weeks.",
+            completed: "false"
+        }
+    ],
     selected: null
 }
 
