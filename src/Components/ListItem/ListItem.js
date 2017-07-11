@@ -6,7 +6,7 @@ class ListItem extends Component {
     render() {
         return (
             <div className="list_item_container">
-                <p>Take the dog for a walk</p>
+                <p>{this.props.task}</p>
                 <div className="quick_options">
                     <button className="complete_button">Complete</button>
                     <p>X</p>
