@@ -11,7 +11,15 @@ class NewToDo extends Component {
                 <h1>TO-DO:</h1>
                 <div className="input_container">
                     <input value={this.props.newTaskInput} onChange={(e) => this.props.changeTaskInput(e.target.value)}/>
-                    <button className="add_button" onClick={() => this.props.addTask(this.props.newTaskInput)}>Add new to-do</button>
+                    <button className="add_button" onClick={() => {
+                        if(this.props.newTaskInput){
+                            this.props.addTask(this.props.newTaskInput)
+                        }
+                        else{
+                            alert('Make sure you type in a task!');
+                        }
+                            }}>Add new to-do</button>
+                    
                 </div>
             </div>
         );
