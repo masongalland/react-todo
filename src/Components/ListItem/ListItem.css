@@ -10,8 +10,16 @@
 .complete_button{
     background-color: lightgray;
     border: none;
+    border-radius: 2px;
     padding: 3px 5px;
+    margin-right: 7px;
 }
+
+.quick_options{
+    display: flex;
+    align-items: center;
+}
+
 p {
     font-size: 12px;
 }

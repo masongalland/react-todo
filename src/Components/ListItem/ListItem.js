@@ -7,7 +7,10 @@ class ListItem extends Component {
         return (
             <div className="list_item_container">
                 <p>Take the dog for a walk</p>
-                <button className="complete_button">Complete</button>
+                <div className="quick_options">
+                    <button className="complete_button">Complete</button>
+                    <p>X</p>
+                </div>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 const initialState = {
-    todos: []
+    todos: [],
+    selected: null
 }
 
 

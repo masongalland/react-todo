@@ -6,7 +6,7 @@ class Details extends Component {
     render() {
         return (
             <div className='details_container'>
-                Details
+                
             </div>
         );
     }
