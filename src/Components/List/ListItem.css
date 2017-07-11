@@ -16,6 +16,13 @@
     margin-right: 7px;
     height: 20px;
 }
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+.completed_container {
+    background-color: lightblue;
+}
 
 .quick_options{
     display: flex;
