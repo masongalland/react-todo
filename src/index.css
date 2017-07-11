@@ -31,6 +31,9 @@ time, mark, audio, video {
 body {
     line-height:1;
 }
+button {
+    cursor: pointer;
+}
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
