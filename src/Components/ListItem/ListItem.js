@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class NewToDo extends Component {
+class ListItem extends Component {
     render() {
         return (
             <div>
-                NewToDo
+                <h6>List Item</h6>
             </div>
         );
     }
 }
 
-export default NewToDo;
+export default ListItem;
