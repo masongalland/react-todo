@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Details from '../Details/Details';
@@ -10,9 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NewToDo />
-        <List />
-        <div>
+        <div className="left">
+          <NewToDo />
+          <List />
+        </div>
+        <div className='right'>
           <Details />
         </div>
         

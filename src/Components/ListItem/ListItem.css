@@ -1,0 +1,17 @@
+.list_item_container {
+    width: 100%;
+    padding: 6px;
+    background-color: white;
+    box-shadow: 0 0 2px 1px rgba(169, 167, 167, 0.48);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.complete_button{
+    background-color: lightgray;
+    border: none;
+    padding: 3px 5px;
+}
+p {
+    font-size: 12px;
+}

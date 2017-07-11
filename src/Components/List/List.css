@@ -1,0 +1,8 @@
+.list_container {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 4px 1px rgba(169, 167, 167, 0.48);
+    height: calc(100vh - 220px);
+    background-color: #f8f8f8;
+}

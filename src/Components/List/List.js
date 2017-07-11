@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 import ListItem from "../ListItem/ListItem";
 
+import "./List.css";
+
 class List extends Component {
     render() {
         return (
-            <div>
-                <h1>List</h1>
+            <div className="list_container">
                 <ListItem />
             </div>
         );
