@@ -18,21 +18,18 @@ const initialState = {
 const TYPE_NEW_TASK = "TYPE_NEW_TASK";
 const ADD_TASK = "ADD_TASK";
 const COMPLETE_TASK = "COMPLETE_TASK";
+const DELETE_TASK = "DELETE_TASK";
 
 
 function reducer(state=initialState, action){
     switch(action.type){
         case ADD_TASK:
-            console.log('new')
-        
             return Object.assign({}, state, { todos: [...state.todos, {
                 task: action.payload,
                 description: '',
                 completed: false
             }], newTaskInput: ''} )
         case TYPE_NEW_TASK:
-            console.log('typing')
-        
             return Object.assign({}, state, {newTaskInput: action.payload})
         case COMPLETE_TASK:
             let filtered = state.todos.map((todo, index) => {
@@ -42,12 +39,14 @@ function reducer(state=initialState, action){
                 return todo;
             });
             return Object.assign( {}, state, {todos: filtered} )
+        case DELETE_TASK:
+            let newTodoArr = state.todos.filter((todo, index) => {
+                return index !== action.payload;
+            })
+            return Object.assign({}, state, {todos: newTodoArr})
         default:
-            console.log('default')
-        
             return state;
     }
-    
 }
 
 export function changeTaskInput(value){
@@ -65,9 +64,15 @@ export function addTask(task){
 }
 
 export function markCompleted(index){
-    // console.log(index)
     return {
         type: COMPLETE_TASK,
+        payload: index
+    }
+}
+
+export function deleteTask(index){
+    return {
+        type: DELETE_TASK,
         payload: index
     }
 }

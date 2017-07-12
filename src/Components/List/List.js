@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {markCompleted} from '../../reducer';
+import {markCompleted, deleteTask} from '../../reducer';
 
 import "./List.css";
 import "./ListItem.css";
@@ -13,7 +13,7 @@ class List extends Component {
                 <p className={todo.completed ? "completed" : "" }>{todo.task}</p>
                 <div className="quick_options">
                     <button className={"complete_button " + (todo.completed ? "completed" : "")  }onClick={() => this.props.markCompleted(index)}>Complete</button>
-                    <p>X</p>
+                    <p className="quick_delete" onClick={() => this.props.deleteTask(index)}>X</p>
                 </div>
             </div>
         ))
@@ -29,4 +29,4 @@ function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps, {markCompleted})(List);
+export default connect(mapStateToProps, {markCompleted, deleteTask})(List);

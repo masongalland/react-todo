@@ -13,7 +13,6 @@
     border: none;
     border-radius: 2px;
     padding: 3px 5px;
-    margin-right: 7px;
     height: 20px;
 }
 .completed {
@@ -27,6 +26,11 @@
 .quick_options{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 73px;
+}
+.quick_delete {
+    cursor: pointer;
 }
 
 p {
