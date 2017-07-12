@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Details from '../Details/Details';
+import DetailsContainer from '../Details/DetailsContainer';
 import List from '../List/List';
 import NewToDo from '../NewToDo/NewToDo';
 
@@ -14,7 +14,7 @@ class App extends Component {
           <List />
         </div>
         <div className='right'>
-          <Details />
+          <DetailsContainer />
         </div>
         
       </div>

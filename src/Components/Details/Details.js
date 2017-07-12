@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 import './Details.css';
 
 class Details extends Component {
     render() {
+        console.log(this.props)
+        const todo = this.props.todos[0]
+
         return (
             <div className='details_container'>
-                <p>Task</p>
+                <p>{todo.task}</p>
                 <div className="details_task">
                     <input className="task_input" />
                     <button className="complete_button">Complete</button>
@@ -23,4 +27,8 @@ class Details extends Component {
     }
 }
 
-export default Details;
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps)(Details);
