@@ -9,7 +9,6 @@ class DetailsContainer extends Component {
             <div>
                 <Route exact path="/" component={Details} />
                 <Route path="/:index" component={Details} />
-                }/>
             </div>
         );
     }

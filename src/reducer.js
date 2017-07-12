@@ -11,14 +11,17 @@ const initialState = {
             completed: false
         }
     ],
-    selected: null,
-    newTaskInput: ''
+    selected: 0,
+    newTaskInput: '',
+
 }
 
 const TYPE_NEW_TASK = "TYPE_NEW_TASK";
 const ADD_TASK = "ADD_TASK";
 const COMPLETE_TASK = "COMPLETE_TASK";
 const DELETE_TASK = "DELETE_TASK";
+const SELECT = "SELECT";
+const MODIFY ="MODIFY";
 
 
 function reducer(state=initialState, action){
@@ -34,7 +37,7 @@ function reducer(state=initialState, action){
         case COMPLETE_TASK:
             let filtered = state.todos.map((todo, index) => {
                 if(index === action.payload){
-                    todo.completed = true;
+                    todo.completed = todo.completed ? false : true;
                 } 
                 return todo;
             });
@@ -44,6 +47,18 @@ function reducer(state=initialState, action){
                 return index !== action.payload;
             })
             return Object.assign({}, state, {todos: newTodoArr})
+        case SELECT:
+            return Object.assign({}, state, {selected: state.selected + 1})
+        case MODIFY:
+            console.log(action.payload.index)
+            let modified = state.todos.map((todo, index) => {
+                if(index === action.payload.index) {
+                    todo.task = action.payload.task;
+                    todo.description = action.payload.description;
+                }
+                return todo;
+            })
+            return Object.assign({}, state, {todos: modified})
         default:
             return state;
     }
@@ -74,6 +89,19 @@ export function deleteTask(index){
     return {
         type: DELETE_TASK,
         payload: index
+    }
+}
+
+export function select(){
+    return {
+        type: SELECT
+    }
+}
+
+export function modify(modified){
+    return {
+        type: MODIFY,
+        payload: modified
     }
 }
 
