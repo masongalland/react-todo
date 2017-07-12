@@ -7,7 +7,8 @@ class DetailsContainer extends Component {
     render() {
         return (
             <div>
-                <Route path="/:index" render={()=> <Details />
+                <Route exact path="/" component={Details} />
+                <Route path="/:index" component={Details} />
                 }/>
             </div>
         );

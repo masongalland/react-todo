@@ -5,8 +5,8 @@ import './Details.css';
 
 class Details extends Component {
     render() {
-        console.log(this.props)
-        const todo = this.props.todos[0]
+        const param = this.props.match.params.index ? this.props.match.params.index : 0;
+        const todo = this.props.todos[param];
 
         return (
             <div className='details_container'>
