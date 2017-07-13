@@ -50,7 +50,6 @@ function reducer(state=initialState, action){
         case SELECT:
             return Object.assign({}, state, {selected: state.selected + 1})
         case MODIFY:
-            console.log(action.payload.index)
             let modified = state.todos.map((todo, index) => {
                 if(index === action.payload.index) {
                     todo.task = action.payload.task;

@@ -15,6 +15,8 @@ class Details extends Component {
             taskInput: this.props.todos[this.props.match.params.index ? this.props.match.params.index : 0].task,
             descriptionInput: this.props.todos[this.props.match.params.index ? this.props.match.params.index : 0].description
         };
+
+        this.cancel = this.cancel.bind(this);
     }
     componentWillReceiveProps(props) {
         this.setState({
@@ -32,6 +34,9 @@ class Details extends Component {
     descriptionChange(value){
         this.setState(Object.assign({}, this.state, {descriptionInput: value}))
     }
+    cancel(){
+        this.componentWillReceiveProps(this.props)
+    }
     
     render() {
         
@@ -44,17 +49,18 @@ class Details extends Component {
 
         return (
             <div className='details_container'>
-                <p>Task</p>
+                <h1>DETAILS:</h1>
+                <h6>Task</h6>
                 <div className="details_task">
                     <input value={this.state.taskInput} onChange={(e) => this.handleChange(e.target.value)} className="task_input" />
                     <button onClick={() => this.props.markCompleted(modified.index)} className="complete_button">Complete</button>
                 </div>
-                <p>Description</p>
+                <h6>Description</h6>
                 <textarea rows="3" onChange={(e) => {this.descriptionChange(e.target.value)}}value={this.state.descriptionInput}/>
                 <div className="details_buttons_container">
                     <button onClick={() => this.props.modify(modified)}>Save</button>
-                    <button >Cancel</button>
-                    <Link to="/" ><button onClick={() => this.props.deleteTask(modified.index)}>Delete</button></Link>
+                    <button onClick={this.cancel}>Cancel</button>
+                    <Link to="/" ><button className='delete'onClick={() => this.props.deleteTask(modified.index)}>Delete</button></Link>
                 </div>
             </div>
         );
